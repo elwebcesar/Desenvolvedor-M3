@@ -1,0 +1,131 @@
+$space: 40px;
+
+@media all and (max-width: $resolution-full){
+    .wrap{
+        padding: 0 12px;
+    }
+
+    .header .wrap {
+        padding: 0 ($space / 2);
+    }
+
+    .footer .conditions {
+        display: none;
+    }
+}
+
+
+@media all and (max-width: $resolution-responsive){
+    .noDesk {
+        display: flex;
+    }
+
+    .white {
+        &.active {
+            display: flex;
+        }
+    }
+
+    .titleProdcuts {
+        justify-content: center;
+
+        & h1 {
+            margin-top: 0;
+        }
+    }
+
+    .body-info {
+        flex-direction: column;
+    }
+
+    .products li {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .selectOrder {
+        display: none;
+    }
+
+    .full-responsive {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        // display: none;
+        display: flex;
+        flex-flow: column;
+        padding-bottom: $space;
+        width: 100%;
+        background-color: $white;
+
+        transform: translateY(-100%);
+        transition: transform ease-out 0.25s;
+    
+        &.active {
+            // display: flex;
+            transform: translateY(0);
+        }
+
+        & h2 {
+            display: flex;
+            margin-bottom: $space;
+            padding: $space;
+            @include type-light;
+            border-bottom: 1px solid $gray5;
+        }
+    
+        & button.close {
+            display: flex;
+            position: absolute;
+            top: $space;
+            right: $space;
+            background: none;
+        }
+    
+        & h3 {
+            display: none;
+        }
+
+        & .space {
+            height: 30px;
+        }
+
+        & .custom-radio {
+            &.date [type="radio"]:checked + label:before,
+            &.date [type="radio"]:not(:checked) + label:before,
+            &.date [type="radio"]:checked + label:after,
+            &.date [type="radio"]:not(:checked) + label:after {            
+                width: 56px;
+                height: 56px;
+            }
+        }
+
+        & .sizes div {
+            height: 70px;
+        }
+    }
+}
+
+
+@media all and (max-width: 520px){
+    .products li {
+        width: 50%;
+    }
+
+    .buttons {
+        padding-left: 0;
+        flex-flow: column;
+
+        & button {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+@media all and (max-width: 340px){
+    .products li {
+        width: 100%;
+    }
+}

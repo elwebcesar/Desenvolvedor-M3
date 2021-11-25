@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prueba - César Fernández</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <header class="header full-width">
+    <div class="wrap justify-content-space-between">
+      <a href="#">
+        <figure>
+          <img src="./images/logo-m3.png" alt="m3 ecommerce" title="m3 ecommerce" />
+        </figure>
+      </a>
+  
+      <div class="shoppingCart">
+        <img src="./images/padlock.png" alt="shoppingCart">
+        <span id="shoppingCartAmount">0</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="wrap flex-direction-column">
+    <header class="titleProdcuts full-width justify-content-space-between">
+      <h1>Blusas</h1>
+      <div>
+        <div class="custom-select selectOrder">
+          <select id="selectOrder">
+            <option value="0">Ordenar por:</option>
+            <option value="1">Mais recentes</option>
+            <option value="2">Menor preço</option>
+            <option value="3">Maior preço</option>      
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <div class="buttonsResponsive noDesk full-width">
+      <button type="button" id="btnFullFiltrar">Filtrar</button>
+      <button type="button" id="btnFullOrdenar">Ordenar</button>
+    </div>
+
+    <div class="full-width body-info">
+      <div class="conditions">
+        <div id="fullOrder" class="fullOrder full-responsive">
+          <button type="button" class="close" name="closeFullResponsive"><img src="./images/x.png" alt="close" /></button>
+          <h2>ORDERNAR</h2>
+          <div class="fullOrder-buttons">
+            <button type="button" name="btnOrder" value="1">Mais recentes</button>
+            <button type="button" name="btnOrder" value="2">Menor preço</button>
+            <button type="button" name="btnOrder" value="3">Maior preço</button>
+          </div>
+        </div>
+
+        <div id="fullFilters" class="full-responsive">
+          <button type="button" class="close" name="closeFullResponsive"><img src="./images/x.png" alt="close" /></button>
+          <h2>FILTRAR</h2>
+          <button class="accordion">cores</button>
+          <div class="panel">
+            <h3>cores</h3>
+            <div id="colors" class="custom-radio"></div>    
+          </div>
+  
+          <div class="full-width space"></div>
+  
+          <button class="accordion">tamanhos</button>
+          <div class="panel">
+            <h3>tamanhos</h3>
+            <div id="sizes" class="custom-radio sizes date"></div>
+          </div>
+  
+          <div class="full-width space"></div>
+  
+          <button class="accordion">faixa de preço</button>
+          <div class="panel">
+            <h3>faixa de preço</h3>
+            <div id="ranks" class="custom-radio"></div>
+          </div>
+  
+          <div class="full-width space"></div>
+  
+          <div class="noDesk buttons full-width">
+            <button type="button" id="btnApply">Aplicar</button>
+            <button type="button" id="btnResetFilter" class="reset" name="btnReset">Limpar</button>
+          </div>
+        </div>
+      </div>
+
+      <article class="flex-grow1">
+        <ul id="products" class="products flex-container"></ul>
+        <div class="buttons full-width">
+          <button type="button" id="btnReset" class="reset" name="btnReset" disabled>Limpar</button>
+          <button type="button" id="btnReload">carregar mais</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer full-width">
+    <div class="wrap">
+      <div class="conditions"></div>
+      <div class="flex-grow1">
+        Agência M3 - Agência de Performance Digital
+      </div>  
+    </div>
+  </footer>
+
+  <div id="white-over" class="white"></div>
+
+  <script src="./js/app.js" type="module"></script>
+</body>
+</html>

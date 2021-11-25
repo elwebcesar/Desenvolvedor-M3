@@ -1,0 +1,44 @@
+.accordion {
+    display: none;
+}
+
+@media all and (max-width: $resolution-responsive) {
+    .accordion {
+        display: block;
+        color: $black;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        transition: 0.4s;
+        background-color: $white;
+    }
+    
+    // .accordion.active, .accordion:hover {
+    //     background-color: #ccc;
+    // }
+    
+    .accordion:after {
+        content: '\002B';
+        color: $black;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+    
+    .accordion.active:after {
+        content: "\2212";
+    }
+    
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+}

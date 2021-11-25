@@ -1,0 +1,331 @@
+@import	"_normalize", "_general";
+
+/* ------------------------------------------------------------------------ */
+
+* {
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    @include type-body;
+    background-color: $white;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    line-height:0;
+}
+
+strong{
+    @include type-heavy;
+}
+
+a {
+    text-decoration: none;
+}
+a, button {
+    transition: all 0.3s;
+}
+
+h1 {
+    @include type-light;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border: 1px solid transparent ;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.full-width {
+    clear: both;
+    display: flex;
+    width: 100%;
+}
+
+.wrap {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 870px;
+}
+
+.flex-grow1 {
+	flex-grow: 1;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.flex-direction-row-reverse {
+    flex-direction: row-reverse;
+    border: 1px solid red;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.space {
+    height: 50px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.header {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid $gray3;
+}
+
+.shoppingCart {
+    position: relative;
+
+    & img {
+        padding-right: 20px;
+    }
+
+    & span {
+        position: absolute;
+        top: 7px;
+        right: 0;
+        padding: 4px 8px;
+        line-height: initial;
+        font-size: 0.9rem;
+        color: $white;
+        background-color: $cyan;
+        border-radius: 60px;
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+
+.selectOrder {
+    width: 170px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+@import	"_select_custom", "_accordion", "_input-radio";
+
+/* ------------------------------------------------------------------------ */
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    & li {
+        display: flex;
+        box-sizing: border-box;
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+
+.products {
+    & li {
+        position: relative;
+        width: 33.33%;
+        margin-bottom: 40px;
+        padding-left: 30px;
+        text-align: center;
+    }
+
+    & div {
+        position: relative;
+        width: 100%;
+    }
+
+    & img {
+        width: 100%;
+    }
+
+    & h3 {
+        margin-top: 15px;
+        @include type-light;
+        text-transform: uppercase;
+    }
+
+    & h4 {
+        @include type-heavy;
+        font-size: 1.4rem;
+    }
+
+    & p {
+        padding-bottom: 60px;
+    }
+
+    & button {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-top: 14px;
+        padding: 15px 0;
+        width: 100%;
+        color: $white;
+        background: $black;
+        box-sizing: border-box;
+    
+        &:hover {
+            background-color: $cyan;
+        }
+    }
+}
+
+.buttons {
+    padding-left: 30px;
+    align-items: center;
+    justify-content: center;
+
+    & button {
+        margin: 0 10px;
+        padding: 15px 30px;
+        min-width: 160px;
+        text-transform: uppercase;
+        color: $white;
+        background: $cyan;
+
+        &.reset {
+            color: $gray2;
+            border-color: $gray2;
+            background-color: $white;
+        }
+
+        &:hover {
+            color: $white;
+            background-color: $gray2;
+        }
+
+        &:disabled {
+            display: none;
+        }
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+
+.conditions {
+    max-width: 190px;
+    min-width: 190px;
+    align-self: flex-start;
+
+    & h3 {
+        margin-bottom: 14px;
+        @include type-light;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+}
+
+.sizes {
+    display: flex;
+    flex-wrap: wrap;
+
+    & div {
+        position: relative;
+        float: left;
+        width: 25%;
+        height: 50px;
+        box-sizing: border-box;
+
+        & span {
+            position: absolute;
+        }
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+
+.footer {
+    margin-top: 48px;
+    padding: 8px 0;
+    color: $white;
+    background-color: $black;
+
+    & .flex-grow1 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+
+.white {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+}
+
+.noDesk {
+    display: none;
+}
+
+.buttonsResponsive {
+    padding: 0 6px;
+
+    & button {
+        flex-grow: 1;
+        margin-bottom: 40px;
+        padding: 15px 0;
+        color: $gray2;
+        background-color: $white;
+        border-color: $gray2;
+
+        &:first-child {
+            border-right: none;
+        }
+    }
+}
+
+.fullOrder {
+    display: none;
+
+    & .fullOrder-buttons {
+        display: flex;
+        flex-flow: column;
+
+        & button {
+            margin: 0 20px;
+            padding: 30px 0;
+            text-align: left;
+            font-size: 1.2rem;
+            background-color: transparent;
+        }
+    }
+}
+
+.full-responsive {
+    & h2, & button.close {
+        display: none;
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+
+@import	"_responsive";
+
+
